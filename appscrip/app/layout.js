@@ -1,7 +1,7 @@
 import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { Header } from "./_components/Header";
-// import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { Header2 } from "./_components/Header2";
 import Footer from "./_components/Footer";
 const inter = Roboto_Condensed({ subsets: ["latin"] });
@@ -15,9 +15,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ChakraProvider>
           <Header />
           {children}
           <Footer/>
+        </ChakraProvider>
+          
       </body>
     </html>
   );

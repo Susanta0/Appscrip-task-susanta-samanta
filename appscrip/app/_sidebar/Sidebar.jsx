@@ -1,10 +1,29 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import "./Siderbar.css";
+// import Products from "../_components/_products/Products";
+import Recommended from "../_recommended/Recommended";
+import Products from "../_components/_products/Products";
 const Sidebar = () => {
+
+  const [selectedSortOption, setSelectedSortOption] = useState('');
+  const [show, setShow]=useState(false)
+
+  const handleShow=()=>{
+    setShow(!show)
+  }
+
   return (
     <>
-    <div className="flex border gap-2 px-16">
-      <aside className=" py-10 w-[20%] ">
+    <Recommended 
+        handleShow={handleShow} 
+        show={show} 
+        setSelectedSortOption={setSelectedSortOption} 
+      />
+    <div className="flex gap-2 px-16 mt-2">
+    {show &&
+    (
+       <aside className=" py-10 w-[40%] ">
         <div className=" flex items-center gap-2">
           <input className="w-6 h-6" type="checkbox" name="" id="" />
           <p className="font-bold text-lg">CUSTOMIZBLE</p>
@@ -102,7 +121,7 @@ const Sidebar = () => {
           </div>
         </details>
         <hr className=" mt-5 border border-gray-200" />
-
+{/* 
         <details className="mt-5 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-2  text-gray-900 transition">
             <span className="text-lg font-bold"> OCCASION </span>
@@ -957,87 +976,16 @@ const Sidebar = () => {
             </ul>
           </div>
         </details>
-        <hr className=" mt-5 border border-gray-200" />
+        <hr className=" mt-5 border border-gray-200" /> */}
 
 
         
       </aside>
-
-      <div className="lg:col-span-3">
-        {/* <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3
-                  className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
-                >
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3
-                  className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
-                >
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3
-                  className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
-                >
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900"> £24.00 GBP </span>
-                </p>
-              </div>
-            </a>
-          </li>
-        </ul> */}
-      </div>
+    )
+    }
+     
+      {/* <ProductCard/> */}
+      <Products selectedSortOption={selectedSortOption}/>
     </div>
       
       
