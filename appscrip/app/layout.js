@@ -1,9 +1,13 @@
+// google font 
 import { Roboto_Condensed } from "next/font/google";
+// global css
 import "./globals.css";
+// components
 import { Header } from "./_components/Header";
-import { ChakraProvider } from "@chakra-ui/react";
-import { Header2 } from "./_components/Header2";
 import Footer from "./_components/Footer";
+// chakra ui
+import { ChakraProvider } from "@chakra-ui/react";
+
 const inter = Roboto_Condensed({ subsets: ["latin"] });
 
 export const metadata = {

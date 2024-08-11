@@ -1,5 +1,3 @@
-import React from "react";
-
 // nextjs link
 import Link from "next/link";
 
@@ -22,11 +20,11 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-black border">
-        <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-20">
+      <footer className="bg-black border relative">
+        <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-4 sm:px-6 lg:px-20">
           <div className="lg:flex lg:items-start lg:gap-8">
             <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-3 lg:gap-y-16">
-              <div className="w-fit col-span-2">
+              <div className="w-fit space-y-14 col-span-2">
                 <div>
                   <h2 className="text-xl font-bold text-white">
                     BE THE FIRST TO KNOW
@@ -36,31 +34,29 @@ const Footer = () => {
                     Sign up for updates from metta muse
                   </p>
                 </div>
+                <div className="col-span-2 mb-52 w-fit lg:flex lg:items-end">
+                  <form className="w-[36em] max-sm:w-[20em]">
+                    <label htmlFor="UserEmail" className="sr-only">
+                      {" "}
+                      Email{" "}
+                    </label>
+
+                    <div className="focus-within:ring sm:flex sm:items-center sm:gap-4">
+                      <input
+                        type="email"
+                        id="UserEmail"
+                        placeholder="Enter your e-mail..."
+                        className="w-full pl-6 h-12 border-none focus:border-transparent focus:ring-transparent sm:text-sm"
+                      />
+
+                      <button className="mt-1 w-full bg-transparent rounded-md border px-14 py-2 text-xl font-light uppercase tracking-wide text-white sm:mt-0 sm:w-auto sm:shrink-0">
+                        SUBSCRIBE
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
-
-              <div className="col-span-2 mb-52 w-fit lg:flex lg:items-end">
-                <form className="w-[36em] max-sm:w-[20em]">
-                  <label htmlFor="UserEmail" className="sr-only">
-                    {" "}
-                    Email{" "}
-                  </label>
-
-                  <div className="focus-within:ring sm:flex sm:items-center sm:gap-4">
-                    <input
-                      type="email"
-                      id="UserEmail"
-                      placeholder="Enter your e-mail..."
-                      className="w-full pl-6 h-12 border-none focus:border-transparent focus:ring-transparent sm:text-sm"
-                    />
-
-                    <button className="mt-1 w-full bg-transparent rounded-md border px-14 py-2 text-xl font-light uppercase tracking-wide text-white sm:mt-0 sm:w-auto sm:shrink-0">
-                      SUBSCRIBE
-                    </button>
-                  </div>
-                </form>
-              </div>
-
-              <div className=" border col-span-2 sm:col-span-1">
+              <div className="col-span-2 sm:col-span-1">
                 <p className="text-xl font-bold text-white">CONTACT US</p>
 
                 <ul className="mt-4 space-y-1 text-lg font-light">
@@ -102,16 +98,16 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                      className="text-white text-xs transition hover:opacity-75"
                     >
-                      {" "}
                       Transactions will be completed in Euros and a currency
-                      reference is available on hover.{" "}
+                      reference is available on hover.
                     </Link>
                   </li>
                 </ul>
               </div>
-              <div className=" col-span-2 sm:col-span-1">
+              <hr className=" absolute w-[75%] bottom-[445px]" />
+              <div className="col-span-2 sm:col-span-1">
                 <p className="text-xl font-bold text-white">metta muse</p>
 
                 <ul className="mt-6 space-y-4 text-lg font-light">
@@ -301,7 +297,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="mt-8 pt-8">
+          <div className="pt-8">
             <div className="">
               <p className="text-sm text-center text-white">
                 Copyright &copy; 2023 mettamuse. All rights reserved.

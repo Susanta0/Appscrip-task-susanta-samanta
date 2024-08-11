@@ -1,17 +1,27 @@
 'use client'
 import React, { useState } from "react";
-import "./Siderbar.css";
-// import Products from "../_components/_products/Products";
+
 import Recommended from "../_recommended/Recommended";
 import Products from "../_components/_products/Products";
 const Sidebar = () => {
 
   const [selectedSortOption, setSelectedSortOption] = useState('');
   const [show, setShow]=useState(false)
+  const [filters, setFilters] = useState({ men: false, women: false, kids: false });
 
   const handleShow=()=>{
     setShow(!show)
   }
+
+  // filter data
+  const handleFilterChange = (filter) => {
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      [filter]: !prevFilters[filter]
+    }));
+  };
+
+  
 
   return (
     <>
@@ -20,7 +30,8 @@ const Sidebar = () => {
         show={show} 
         setSelectedSortOption={setSelectedSortOption} 
       />
-    <div className="flex gap-2 px-16 mt-2">
+      
+    <div className="flex gap-2 px-16 mt-2 max-sm:px-1 sm:px-2">
     {show &&
     (
        <aside className=" py-10 w-[40%] ">
@@ -61,6 +72,7 @@ const Sidebar = () => {
               <button
                 type="button"
                 className="w-fit text-sm text-gray-400 underline underline-offset-4"
+                onClick={() => handleFilterChange('all')}
               >
                 Unselect all
               </button>
@@ -69,12 +81,14 @@ const Sidebar = () => {
             <ul className="space-y-3 mt-6">
               <li>
                 <label
-                  htmlFor="FilterRed"
+                  htmlFor="FilterMen"
                   className="inline-flex items-center gap-2"
                 >
                   <input
                     type="checkbox"
-                    id="FilterRed"
+                    id="FilterMen"
+                    checked={filters.men}
+                  onChange={() => handleFilterChange('men')}
                     className="size-5 rounded border-black"
                   />
 
@@ -84,13 +98,15 @@ const Sidebar = () => {
 
               <li>
                 <label
-                  htmlFor="FilterBlue"
+                  htmlFor="FilterWomen"
                   className="inline-flex items-center gap-2"
                 >
                   <input
                     type="checkbox"
-                    id="FilterBlue"
+                    id="FilterWomen"
                     className="size-5 rounded border-black"
+                    checked={filters.women}
+                    onChange={() => handleFilterChange('women')}
                   />
 
                   <span className="text-1xl font-normal text-black">
@@ -102,13 +118,15 @@ const Sidebar = () => {
 
               <li>
                 <label
-                  htmlFor="FilterGreen"
+                  htmlFor="FilterKids"
                   className="inline-flex items-center gap-2"
                 >
                   <input
                     type="checkbox"
-                    id="FilterGreen"
+                    id="FilterKids"
                     className="size-5 rounded border-black"
+                    checked={filters.kids}
+                    onChange={() => handleFilterChange('kids')}
                   />
 
                   <span className="text-1xl font-normal text-black">
@@ -121,7 +139,7 @@ const Sidebar = () => {
           </div>
         </details>
         <hr className=" mt-5 border border-gray-200" />
-{/* 
+ 
         <details className="mt-5 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-2  text-gray-900 transition">
             <span className="text-lg font-bold"> OCCASION </span>
@@ -976,7 +994,7 @@ const Sidebar = () => {
             </ul>
           </div>
         </details>
-        <hr className=" mt-5 border border-gray-200" /> */}
+        <hr className=" mt-5 border border-gray-200" /> 
 
 
         
@@ -984,8 +1002,7 @@ const Sidebar = () => {
     )
     }
      
-      {/* <ProductCard/> */}
-      <Products selectedSortOption={selectedSortOption}/>
+      <Products selectedSortOption={selectedSortOption} filters={filters}/>
     </div>
       
       
