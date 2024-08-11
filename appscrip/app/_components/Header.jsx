@@ -12,8 +12,8 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <>
-      <header className="bg-white border-b-2 ">
-        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <header className="bg-white border-b-2 border ">
+        <div className="mx-auto  border px-4 sm:px-6 lg:px-20">
           <div className="flex h-16 items-center justify-between">
             <div className="md:flex md:items-center md:gap-12">
               <Link className="block text-teal-600" href="/">
