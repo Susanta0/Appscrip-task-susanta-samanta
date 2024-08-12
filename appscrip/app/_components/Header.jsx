@@ -3,18 +3,16 @@ import { CiSearch } from "react-icons/ci";
 import { GoHeart } from "react-icons/go";
 import { TbShoppingBag } from "react-icons/tb";
 import { CiUser } from "react-icons/ci";
-
-// next js tag
 import Link from "next/link";
-import Image from "next/image";
 
 // logo
 import iconLogo from "/public/icons8-logo.svg";
+import Image from "next/image";
 
 export const Header = () => {
   return (
     <>
-      <header className="bg-white border-b-2">
+      <header className="bg-white border-b-2 fixed z-10 w-full">
         <div className="mx-auto px-4 sm:px-6 lg:px-20">
           <div className="flex h-16 items-center justify-between">
             <div className="md:flex max-sm:flex max-sm:items-center max-sm:gap-2 md:items-center md:gap-12">
