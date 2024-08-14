@@ -1,67 +1,52 @@
 import Link from "next/link";
+import "./Shop.css";
 
 const Shop = () => {
   return (
     <>
-      <section>
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-stretch">
-            <div className="grid place-content-center rounded bg-gray-100 p-6 sm:p-8">
-              <div className="mx-auto max-w-md text-center lg:text-left">
+      <section className="shop-section">
+        <div className="container">
+          <div className="grid-container">
+            <div className="card">
+              <div className="text-content">
                 <header>
-                  <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
-                    Watches
-                  </h2>
-
-                  <p className="mt-4 text-gray-500">
+                  <h2 className="title">Watches</h2>
+                  <p className="description">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Quas rerum quam amet provident nulla error!
                   </p>
                 </header>
-
-                <Link
-                  href="#"
-                  className="mt-8 inline-block rounded border border-gray-900 bg-gray-900 px-12 py-3 text-sm font-medium text-white transition hover:shadow focus:outline-none focus:ring"
-                >
+                <Link href="#" className="shop-button">
                   Shop All
                 </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-2 lg:py-8">
-              <ul className="grid grid-cols-2 gap-4">
-                <li>
-                  <Link href="#" className="group block">
+            <div className="products">
+              <ul className="product-list">
+                <li className="product-item">
+                  <Link href="#" className="product-link">
                     <img
                       src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1598&q=80"
                       alt=""
-                      className="aspect-square w-full rounded object-cover"
+                      className="product-image"
                     />
-
-                    <div className="mt-3">
-                      <h3 className="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4">
-                        Simple Watch
-                      </h3>
-
-                      <p className="mt-1 text-sm text-gray-700">$150</p>
+                    <div className="product-info">
+                      <h3 className="product-title">Simple Watch</h3>
+                      <p className="product-price">$150</p>
                     </div>
                   </Link>
                 </li>
-
-                <li>
-                  <Link href="#" className="group block">
+                <li className="product-item">
+                  <Link href="#" className="product-link">
                     <img
                       src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1598&q=80"
                       alt=""
-                      className="aspect-square w-full rounded object-cover"
+                      className="product-image"
                     />
-
-                    <div className="mt-3">
-                      <h3 className="font-medium text-gray-900 group-hover:underline group-hover:underline-offset-4">
-                        Simple Watch
-                      </h3>
-
-                      <p className="mt-1 text-sm text-gray-700">$150</p>
+                    <div className="product-info">
+                      <h3 className="product-title">Simple Watch</h3>
+                      <p className="product-price">$150</p>
                     </div>
                   </Link>
                 </li>

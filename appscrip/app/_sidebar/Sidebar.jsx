@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import "./Sidebar.css";
 
 import Recommended from "../_recommended/Recommended";
 import Products from "../_components/_products/Products";
@@ -32,30 +33,30 @@ const Sidebar = () => {
         setSelectedSortOption={setSelectedSortOption}
       />
 
-      <div className="flex gap-2 px-16 mt-2 max-sm:px-1 sm:px-2">
+      <div className="container2 ">
         {show && (
-          <aside className=" px-14 py-10 w-[40%] ">
-            <div className=" flex items-center gap-2">
-              <input className="w-6 h-6" type="checkbox" name="" id="" />
-              <p className="font-bold text-lg">CUSTOMIZBLE</p>
+          <aside className="aside">
+            <div className="chil01">
+              <input type="checkbox" name="" id="" />
+              <p>CUSTOMIZBLE</p>
             </div>
             <br />
             <hr />
             <br />
 
-            <details className="overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex flex-col cursor-pointer gap-2 text-gray-900 transition">
-                <div className="w-full flex justify-between items-center">
-                  <span className="text-lg font-bold"> IDEAL FOR </span>
+            <details className="details">
+              <summary className="summary">
+                <div>
+                  <span className="span1"> IDEAL FOR </span>
 
-                  <span className="transition group-open:-rotate-180">
+                  <span className="span2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-4 w-4"
+                      className="arrow"
                     >
                       <path
                         strokeLinecap="round"
@@ -66,98 +67,76 @@ const Sidebar = () => {
                   </span>
                 </div>
 
-                <span className="text-1xl text-black"> All </span>
+                <span className="all"> All </span>
               </summary>
 
-              <div className="bg-white">
-                <header className="flex flex-col mt-4 gap-4">
+              <div className="listMain">
+                <header>
                   <button
                     type="button"
-                    className="w-fit text-sm text-gray-400 underline underline-offset-4"
                     onClick={() => handleFilterChange("all")}
                   >
                     Unselect all
                   </button>
                 </header>
 
-                <ul className="space-y-3 mt-6">
+                <ul>
                   <li>
-                    <label
-                      htmlFor="FilterMen"
-                      className="inline-flex items-center gap-2"
-                    >
+                    <label htmlFor="FilterMen">
                       <input
                         type="checkbox"
                         id="FilterMen"
                         checked={filters.men}
                         onChange={() => handleFilterChange("men")}
-                        className="size-5 rounded border-black"
                       />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Men{" "}
-                      </span>
+                      <span> Men </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterWomen"
-                      className="inline-flex items-center gap-2"
-                    >
+                    <label htmlFor="FilterWomen">
                       <input
                         type="checkbox"
                         id="FilterWomen"
-                        className="size-5 rounded border-black"
                         checked={filters.women}
                         onChange={() => handleFilterChange("women")}
                       />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Women{" "}
-                      </span>
+                      <span> Women </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterKids"
-                      className="inline-flex items-center gap-2"
-                    >
+                    <label htmlFor="FilterKids">
                       <input
                         type="checkbox"
                         id="FilterKids"
-                        className="size-5 rounded border-black"
                         checked={filters.kids}
                         onChange={() => handleFilterChange("kids")}
                       />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Baby & Kids{" "}
-                      </span>
+                      <span> Baby & Kids </span>
                     </label>
                   </li>
                 </ul>
               </div>
             </details>
-            <hr className=" mt-5 border border-gray-200" />
+            <hr className=" hr2" />
 
-            <details className="mt-5 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex flex-col cursor-pointer gap-2 text-gray-900 transition">
-                <div className="w-full flex justify-between items-center">
-                  <span className="text-lg font-bold"> IDEAL FOR </span>
+            <details className="details">
+              <summary className="summary">
+                <div>
+                  <span className="span1"> IDEAL FOR </span>
 
-                  <span className="transition group-open:-rotate-180">
+                  <span className="span2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-4 w-4"
+                      className="arrow"
                     >
                       <path
                         strokeLinecap="round"
@@ -168,123 +147,72 @@ const Sidebar = () => {
                   </span>
                 </div>
 
-                <span className="text-1xl text-black"> All </span>
+                <span className="all"> All </span>
               </summary>
 
-              <div className="bg-white">
-                <header className="flex flex-col mt-4 gap-4">
-                  <button
-                    type="button"
-                    className="w-fit text-sm text-gray-400 underline underline-offset-4"
-                  >
-                    Unselect all
-                  </button>
+              <div className="listMain">
+                <header>
+                  <button type="button">Unselect all</button>
                 </header>
 
-                <ul className="space-y-3 mt-6">
+                <ul>
                   <li>
-                    <label
-                      htmlFor="FilterRed"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterRed"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterRed">
+                      <input type="checkbox" id="FilterRed" />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Rainy Season{" "}
-                      </span>
+                      <span> Rainy Season </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Casual
-                      </span>
+                      <span>Casual</span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Wedding
-                      </span>
+                      <span>Wedding</span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Party
-                      </span>
+                      <span>Party</span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Regular
-                      </span>
+                      <span>Regular</span>
                     </label>
                   </li>
                 </ul>
               </div>
             </details>
-            <hr className=" mt-5 border border-gray-200" />
+            <hr className="hr2" />
 
-            <details className="mt-5 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex flex-col cursor-pointer gap-2 text-gray-900 transition">
-                <div className="w-full flex justify-between items-center">
-                  <span className="text-lg font-bold"> WORK </span>
+            <details className="details">
+              <summary className="summary">
+                <div>
+                  <span className="span1"> WORK </span>
 
-                  <span className="transition group-open:-rotate-180">
+                  <span className="span2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-4 w-4"
+                      className="arrow"
                     >
                       <path
                         strokeLinecap="round"
@@ -295,106 +223,64 @@ const Sidebar = () => {
                   </span>
                 </div>
 
-                <span className="text-1xl text-black"> All </span>
+                <span className="all"> All </span>
               </summary>
 
-              <div className="bg-white">
-                <header className="flex flex-col mt-4 gap-4">
-                  <button
-                    type="button"
-                    className="w-fit text-sm text-gray-400 underline underline-offset-4"
-                  >
-                    Unselect all
-                  </button>
+              <div className="listMain">
+                <header>
+                  <button type="button">Unselect all</button>
                 </header>
 
-                <ul className="space-y-3 mt-6">
+                <ul>
                   <li>
-                    <label
-                      htmlFor="FilterRed"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterRed"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterRed">
+                      <input type="checkbox" id="FilterRed" />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Frech Knot{" "}
-                      </span>
+                      <span> Frech Knot </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Zardosi
-                      </span>
+                      <span>Zardosi</span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Fancy
-                      </span>
+                      <span>Fancy</span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Embroidery
-                      </span>
+                      <span>Embroidery</span>
                     </label>
                   </li>
                 </ul>
               </div>
             </details>
-            <hr className=" mt-5 border border-gray-200" />
+            <hr className="hr2" />
 
-            <details className="mt-5 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex flex-col cursor-pointer gap-2 text-gray-900 transition">
-                <div className="w-full flex justify-between items-center">
-                  <span className="text-lg font-bold"> FABRIC </span>
+            <details className="details">
+              <summary className="summary">
+                <div>
+                  <span className="span1"> FABRIC </span>
 
-                  <span className="transition group-open:-rotate-180">
+                  <span className="span2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-4 w-4"
+                     className="arrow"
                     >
                       <path
                         strokeLinecap="round"
@@ -405,187 +291,100 @@ const Sidebar = () => {
                   </span>
                 </div>
 
-                <span className="text-1xl text-black"> All </span>
+                <span className="all"> All </span>
               </summary>
 
-              <div className="bg-white">
-                <header className="flex flex-col mt-4 gap-4">
-                  <button
-                    type="button"
-                    className="w-fit text-sm text-gray-400 underline underline-offset-4"
-                  >
-                    Unselect all
-                  </button>
+              <div className="listMain">
+                <header>
+                  <button type="button">Unselect all</button>
                 </header>
 
-                <ul className="space-y-3 mt-6">
+                <ul>
                   <li>
-                    <label
-                      htmlFor="FilterRed"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterRed"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterRed">
+                      <input type="checkbox" id="FilterRed" />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Muslin{" "}
-                      </span>
+                      <span> Muslin </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Satin Blend
-                      </span>
+                      <span>Satin Blend</span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Satin
-                      </span>
+                      <span>Satin</span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Tericoat
-                      </span>
+                      <span>Tericoat</span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Liner
-                      </span>
+                      <span>Liner</span>
                     </label>
                   </li>
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Raw Silk
-                      </span>
+                      <span>Raw Silk</span>
                     </label>
                   </li>
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Cotton
-                      </span>
+                      <span>Cotton</span>
                     </label>
                   </li>
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Silk
-                      </span>
+                      <span>Silk</span>
                     </label>
                   </li>
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Cotton Silk
-                      </span>
+                      <span>Cotton Silk</span>
                     </label>
                   </li>
                 </ul>
               </div>
             </details>
-            <hr className=" mt-5 border border-gray-200" />
+            <hr className="hr2" />
 
-            <details className="mt-5 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex flex-col cursor-pointer gap-2 text-gray-900 transition">
-                <div className="w-full flex justify-between items-center">
-                  <span className="text-lg font-bold"> SEGMENT </span>
+            <details className="details">
+              <summary className="summary">
+                <div>
+                  <span className="span1"> SEGMENT </span>
 
-                  <span className="transition group-open:-rotate-180">
+                  <span className="span2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-4 w-4"
+                      className="arrow"
                     >
                       <path
                         strokeLinecap="round"
@@ -596,106 +395,64 @@ const Sidebar = () => {
                   </span>
                 </div>
 
-                <span className="text-1xl text-black"> All </span>
+                <span className="all"> All </span>
               </summary>
 
-              <div className="bg-white">
-                <header className="flex flex-col mt-4 gap-4">
-                  <button
-                    type="button"
-                    className="w-fit text-sm text-gray-400 underline underline-offset-4"
-                  >
-                    Unselect all
-                  </button>
+              <div className="listMain">
+                <header>
+                  <button type="button">Unselect all</button>
                 </header>
 
-                <ul className="space-y-3 mt-6">
+                <ul>
                   <li>
-                    <label
-                      htmlFor="FilterRed"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterRed"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterRed">
+                      <input type="checkbox" id="FilterRed" />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Velvet{" "}
-                      </span>
+                      <span> Velvet </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Zardosi
-                      </span>
+                      <span>Zardosi</span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Cotton
-                      </span>
+                      <span>Cotton</span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterGreen"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterGreen"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterGreen">
+                      <input type="checkbox" id="FilterGreen" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Leather
-                      </span>
+                      <span>Leather</span>
                     </label>
                   </li>
                 </ul>
               </div>
             </details>
-            <hr className=" mt-5 border border-gray-200" />
+            <hr className="hr2" />
 
-            <details className="mt-5 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex flex-col cursor-pointer gap-2 text-gray-900 transition">
-                <div className="w-full flex justify-between items-center">
-                  <span className="text-lg font-bold"> SUITABLE FOR </span>
+            <details className="details">
+              <summary className="summary">
+                <div>
+                  <span className="span1"> SUITABLE FOR </span>
 
-                  <span className="transition group-open:-rotate-180">
+                  <span className="span2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-4 w-4"
+                      className="arrow"
                     >
                       <path
                         strokeLinecap="round"
@@ -706,72 +463,48 @@ const Sidebar = () => {
                   </span>
                 </div>
 
-                <span className="text-1xl text-black"> All </span>
+                <span className="all"> All </span>
               </summary>
 
-              <div className="bg-white">
-                <header className="flex flex-col mt-4 gap-4">
-                  <button
-                    type="button"
-                    className="w-fit text-sm text-gray-400 underline underline-offset-4"
-                  >
-                    Unselect all
-                  </button>
+              <div className="listMain">
+                <header>
+                  <button type="button">Unselect all</button>
                 </header>
 
-                <ul className="space-y-3 mt-6">
+                <ul>
                   <li>
-                    <label
-                      htmlFor="FilterRed"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterRed"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterRed">
+                      <input type="checkbox" id="FilterRed" />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Half Sleeve{" "}
-                      </span>
+                      <span> Half Sleeve </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Cap Sleeve
-                      </span>
+                      <span>Cap Sleeve</span>
                     </label>
                   </li>
                 </ul>
               </div>
             </details>
-            <hr className=" mt-5 border border-gray-200" />
+            <hr className="hr2" />
 
-            <details className="mt-5 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex flex-col cursor-pointer gap-2 text-gray-900 transition">
-                <div className="w-full flex justify-between items-center">
-                  <span className="text-lg font-bold"> RAW MATERIALS </span>
+            <details className="details">
+              <summary className="summary">
+                <div>
+                  <span className="span1"> RAW MATERIALS </span>
 
-                  <span className="transition group-open:-rotate-180">
+                  <span className="span2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-4 w-4"
+                      className="arrow"
                     >
                       <path
                         strokeLinecap="round"
@@ -782,122 +515,70 @@ const Sidebar = () => {
                   </span>
                 </div>
 
-                <span className="text-1xl text-black"> All </span>
+                <span className="all"> All </span>
               </summary>
 
-              <div className="bg-white">
-                <header className="flex flex-col mt-4 gap-4">
-                  <button
-                    type="button"
-                    className="w-fit text-sm text-gray-400 underline underline-offset-4"
-                  >
-                    Unselect all
-                  </button>
+              <div className="listMain">
+                <header>
+                  <button type="button">Unselect all</button>
                 </header>
 
-                <ul className="space-y-3 mt-6">
+                <ul>
                   <li>
-                    <label
-                      htmlFor="FilterRed"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterRed"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterRed">
+                      <input type="checkbox" id="FilterRed" />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Wool{" "}
-                      </span>
+                      <span> Wool </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Silk
-                      </span>
+                      <span>Silk</span>
                     </label>
                   </li>
                   <li>
-                    <label
-                      htmlFor="FilterRed"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterRed"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterRed">
+                      <input type="checkbox" id="FilterRed" />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Leather{" "}
-                      </span>
+                      <span> Leather </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Cotton
-                      </span>
+                      <span>Cotton</span>
                     </label>
                   </li>
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Cellulosic Fibers
-                      </span>
+                      <span>Cellulosic Fibers</span>
                     </label>
                   </li>
                 </ul>
               </div>
             </details>
-            <hr className=" mt-5 border border-gray-200" />
+            <hr className="hr2" />
 
-            <details className="mt-5 overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex flex-col cursor-pointer gap-2 text-gray-900 transition">
-                <div className="w-full flex justify-between items-center">
-                  <span className="text-lg font-bold"> PATTERN </span>
+            <details className="details">
+              <summary className="summary">
+                <div>
+                  <span className="span1"> PATTERN </span>
 
-                  <span className="transition group-open:-rotate-180">
+                  <span className="span2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-4 w-4"
+                      className="arrow"
                     >
                       <path
                         strokeLinecap="round"
@@ -908,124 +589,63 @@ const Sidebar = () => {
                   </span>
                 </div>
 
-                <span className="text-1xl text-black"> All </span>
+                <span className="all"> All </span>
               </summary>
 
-              <div className="bg-white">
-                <header className="flex flex-col mt-4 gap-4">
-                  <button
-                    type="button"
-                    className="w-fit text-sm text-gray-400 underline underline-offset-4"
-                  >
-                    Unselect all
-                  </button>
+              <div className="listMain">
+                <header>
+                  <button type="button">Unselect all</button>
                 </header>
 
-                <ul className="space-y-3 mt-6">
+                <ul>
                   <li>
-                    <label
-                      htmlFor="FilterRed"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterRed"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterRed">
+                      <input type="checkbox" id="FilterRed" />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Windowpane{" "}
-                      </span>
+                      <span> Windowpane </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Pinstripes
-                      </span>
+                      <span>Pinstripes</span>
                     </label>
                   </li>
                   <li>
-                    <label
-                      htmlFor="FilterRed"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterRed"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterRed">
+                      <input type="checkbox" id="FilterRed" />
 
-                      <span className="text-1xl font-normal text-black">
-                        {" "}
-                        Solid{" "}
-                      </span>
+                      <span> Solid </span>
                     </label>
                   </li>
 
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Chalk Stripes
-                      </span>
+                      <span>Chalk Stripes</span>
                     </label>
                   </li>
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Slim Fit
-                      </span>
+                      <span>Slim Fit</span>
                     </label>
                   </li>
                   <li>
-                    <label
-                      htmlFor="FilterBlue"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        id="FilterBlue"
-                        className="size-5 rounded border-black"
-                      />
+                    <label htmlFor="FilterBlue">
+                      <input type="checkbox" id="FilterBlue" />
 
-                      <span className="text-1xl font-normal text-black">
-                        Tartan
-                      </span>
+                      <span>Tartan</span>
                     </label>
                   </li>
                 </ul>
               </div>
             </details>
-            <hr className=" mt-5 border border-gray-200" />
+            <hr className="hr2" />
           </aside>
         )}
 

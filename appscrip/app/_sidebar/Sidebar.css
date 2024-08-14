@@ -1,0 +1,128 @@
+.container2 {
+    display: flex;
+    gap: 8px;
+    padding-left: 64px;
+    padding-right: 64px;
+    margin-top: 8px;
+  }
+  .aside {
+    padding: 40px 56px 40px 56px;
+    width: 35%;
+  }
+  .aside > .chil01 {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .chil01 > input {
+    width: 24px;
+    height: 24px;
+  }
+  .chil01 > p {
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .details {
+    overflow: hidden;
+  }
+  
+  .details summary::-webkit-details-marker {
+    display: none;
+  }
+  .summary {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 8px;
+    color: gray;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+      backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  .summary > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .span1 {
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: black;
+  }
+  .span2 {
+    color: black;
+    transition: transform 0.3s ease;
+  }
+  .arrow {height: 20px;width: 20px;}
+  .all {
+    font-size: 1.10rem;
+    line-height: 1.75rem;
+    color: black;
+  }
+  
+  .listMain {
+    background-color: white;
+  }
+  .listMain > header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    gap: 16px;
+  }
+  .listMain > header > button {
+    width: fit-content;
+    font-size: 14px;
+    line-height: 20px;
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .listMain > ul {
+    margin-top: 0.75rem;
+    margin-top: 24px;
+  }
+  .listMain > ul > li > label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .listMain > ul > li > label > input {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 4px;
+    border-color: black;
+  }
+  .listMain > ul > li > label > span {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: normal;
+    color: black;
+  }
+  .hr2 {
+    margin-top: 20px;
+    border: 1px solid;
+    border-color: rgb(188, 185, 185);
+  }
+  
+  /* max:sm */
+  @media (max-width: 639px) {
+    .container2 {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
+  
+  /* sm: */
+  @media (min-width: 640px) {
+    .container2 {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+  

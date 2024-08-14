@@ -1,40 +1,39 @@
-
-import Link from "next/link"
-
+import Link from "next/link";
+import styles from "./Skills.module.css";
 
 const Skills = () => {
   return (
-<article className="overflow-hidden rounded-lg  border-gray-100 bg-white shadow-sm">
-  <img
-    alt="banner"
-    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-    className="h-56 w-full object-cover"
-  />
+    <article className={styles.article}>
+      <img
+        alt="banner"
+        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+        className={styles.image}
+      />
 
-  <div className="p-4 sm:p-6">
-    <Link href="#">
-      <h3 className="text-lg font-medium text-gray-900">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </h3>
-    </Link>
+      <div className={styles.content}>
+        <Link href="#">
+          <h3 className={styles.title}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </h3>
+        </Link>
 
-    <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
-      pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem,
-      mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque
-      dignissimos. Molestias explicabo corporis voluptatem?
-    </p>
+        <p className={styles.description}>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+          dolores, possimus pariatur animi temporibus nesciunt praesentium
+          dolore sed nulla ipsum eveniet corporis quidem, mollitia itaque minus
+          soluta, voluptates neque explicabo tempora nisi culpa eius atque
+          dignissimos. Molestias explicabo corporis voluptatem?
+        </p>
 
-    <Link href="#" className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600">
-      Find out more
+        <Link href="#" className={styles.moreLink}>
+          Find out more
+          <span aria-hidden="true" className={styles.arrow}>
+            &rarr;
+          </span>
+        </Link>
+      </div>
+    </article>
+  );
+};
 
-      <span aria-hidden="true" className="block transition-all group-hover:ms-0.5 rtl:rotate-180">
-        &rarr;
-      </span>
-    </Link>
-  </div>
-</article>
-  )
-}
-
-export default Skills
+export default Skills;

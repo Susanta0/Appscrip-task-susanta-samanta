@@ -8,19 +8,19 @@ import Link from "next/link";
 // logo
 import iconLogo from "/public/icons8-logo.svg";
 import Image from "next/image";
-
+import "./Header.css"
 export const Header = () => {
   return (
     <>
-      <header className="bg-white border-b-2 fixed z-10 w-full">
-        <div className="mx-auto px-4 sm:px-6 lg:px-20">
-          <div className="flex h-16 items-center justify-between">
-            <div className="md:flex max-sm:flex max-sm:items-center max-sm:gap-2 md:items-center md:gap-12">
-              <div className=" hidden max-sm:flex">
-                <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+      <header className="header">
+        <div className="headerChild">
+          <div className="headerChild2">
+            <div className="headerChild3">
+              <div className="headerChild4">
+                <button className="btnLogo ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
+                    className="hhhh"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -34,17 +34,17 @@ export const Header = () => {
                   </svg>
                 </button>
               </div>
-              <Link className="block" href="/">
+              <Link className="icn" href="/">
                 <Image src={iconLogo} width={40} height={40} alt="logo" />
               </Link>
             </div>
 
-            <div className="hidden md:block">
+            <div className="child5">
               <nav aria-label="Global">
-                <ul className="flex items-center gap-6 text-sm">
+                <ul className="ul">
                   <li>
                     <Link
-                      className="text-black font-extrabold text-4xl"
+                      className="a1"
                       href="#"
                     >
                       LOGO
@@ -54,22 +54,22 @@ export const Header = () => {
               </nav>
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className=" sm:flex max-sm:flex w-54 items-center gap-3 ">
+            <div className="child6">
+              <div className="child6-pro">
                 <div>
-                  <CiSearch className="h-7 w-7" />
+                  <CiSearch className="icons12" />
                 </div>
                 <div>
-                  <GoHeart className="h-7 w-7" />
+                  <GoHeart className="icons12" />
                 </div>
                 <div>
-                  <TbShoppingBag className="h-7 w-7" />
+                  <TbShoppingBag className="icons12" />
                 </div>
                 <div>
-                  <CiUser className="h-7 w-7 max-sm:hidden" />
+                  <CiUser className="icons13" />
                 </div>
-                <div className="max-sm:hidden">
-                  <select placeholder="ENG">
+                <div className="eng">
+                  <select placeholder="ENG" className="engchild">
                     <option value="ENG">ENG</option>
                     <option value="IND">IND</option>
                     <option value="AUS">AUS</option>
@@ -80,18 +80,18 @@ export const Header = () => {
               </div>
             </div>
           </div>
-          <div className="hidden max-sm:flex max-sm:gap-2 max-sm:items-center">
-            <p className="text-gray-400">HOME</p>
-            <hr className="h-4 border" />
-            <p>SHOP</p>
+          <div className="child7">
+            <p >HOME</p>
+            <hr className="hr" />
+            <p style={{color:"black"}}>SHOP</p>
           </div>
-          <div className="flex mt-10 h-16 max-sm:hidden items-center justify-center">
-            <div className="md:block">
+          <div className="child8">
+            <div className="child8-child">
               <nav aria-label="Global">
-                <ul className="flex items-center gap-20">
+                <ul>
                   <li>
                     <Link
-                      className="navLink text-black font-bold text-xl relative "
+                      className="navLink"
                       href="/shop"
                     >
                       {" "}
@@ -101,7 +101,7 @@ export const Header = () => {
 
                   <li>
                     <Link
-                      className="navLink text-black font-bold text-xl relative "
+                      className="navLink"
                       href="/skills"
                     >
                       {" "}
@@ -111,7 +111,7 @@ export const Header = () => {
 
                   <li>
                     <Link
-                      className="navLink text-black font-bold text-xl relative "
+                      className="navLink"
                       href="/stories"
                     >
                       {" "}
@@ -121,7 +121,7 @@ export const Header = () => {
 
                   <li>
                     <Link
-                      className="navLink text-black font-bold text-xl relative "
+                      className="navLink"
                       href="/about"
                     >
                       {" "}
@@ -131,7 +131,7 @@ export const Header = () => {
 
                   <li>
                     <Link
-                      className="navLink text-black font-bold text-xl relative "
+                      className="navLink"
                       href="/contactus"
                     >
                       {" "}

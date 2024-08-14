@@ -16,54 +16,56 @@ import americaLogo from "/public/united-states-of-america.png";
 import { RiInstagramFill } from "react-icons/ri";
 import { SiLinkedin } from "react-icons/si";
 import Image from "next/image";
+import "./Footer.css"
 
 const Footer = () => {
   return (
     <>
-      <footer className="bg-black border relative">
-        <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-4 sm:px-6 lg:px-20">
-          <div className="lg:flex lg:items-start lg:gap-8">
-            <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-3 lg:gap-y-16">
-              <div className="w-fit space-y-14 col-span-2">
+      <footer className="footer">
+        <div className="containerMain">
+          <div className="containerMainChild">
+            <div className="custom-grid">
+              <div className="custom-grid2">
                 <div>
-                  <h2 className="text-xl font-bold text-white">
+                  <h2 className="heading">
                     BE THE FIRST TO KNOW
                   </h2>
 
-                  <p className="mt-4 font- text-white">
+                  <p className="para1">
                     Sign up for updates from metta muse
                   </p>
                 </div>
-                <div className="col-span-2 mb-52 w-fit lg:flex lg:items-end">
-                  <form className="w-[36em] max-sm:w-[20em]">
-                    <label htmlFor="UserEmail" className="sr-only">
+                <div className="form-con">
+                  <form className="form">
+                    <label htmlFor="UserEmail" className="email">
                       {" "}
                       Email{" "}
                     </label>
 
-                    <div className="focus-within:ring sm:flex sm:items-center sm:gap-4">
+                    <div className="emlbtnDiv">
                       <input
                         type="email"
                         id="UserEmail"
                         placeholder="Enter your e-mail..."
-                        className="w-full pl-6 h-12 border-none focus:border-transparent focus:ring-transparent sm:text-sm"
+      
                       />
 
-                      <button className="mt-1 w-full bg-transparent rounded-md border px-14 py-2 text-xl font-light uppercase tracking-wide text-white sm:mt-0 sm:w-auto sm:shrink-0">
+                      <button>
                         SUBSCRIBE
                       </button>
                     </div>
                   </form>
                 </div>
               </div>
-              <div className="col-span-2 sm:col-span-1">
-                <p className="text-xl font-bold text-white">CONTACT US</p>
 
-                <ul className="mt-4 space-y-1 text-lg font-light">
+              <div className="contact-us">
+                <p className="para4">CONTACT US</p>
+
+                <ul className="ul1">
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                     
                     >
                       {" "}
                       +44 221 133 5360{" "}
@@ -73,15 +75,15 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                     
                     >
                       {" "}
                       customercare@mettamuse.com{" "}
                     </Link>
                   </li>
                 </ul>
-                <p className="text-xl font-bold text-white mt-5">CURRENCY</p>
-                <div className="w-fit flex items-center mt-3">
+                <p className="currency">CURRENCY</p>
+                <div>
                   <div>
                     <Image
                       src={americaLogo}
@@ -90,15 +92,15 @@ const Footer = () => {
                       alt="united-states-of-america_logo"
                     />
                   </div>
-                  <p className="w-fi">🔹</p>
-                  <p className="text-white font-bold text-1xl">USD</p>
+                  <p>🔹</p>
+                  <p className="usd">USD</p>
                 </div>
 
-                <ul className="mt-2 text-lg font-light">
+                <ul className="link">
                   <li>
                     <Link
                       href="#"
-                      className="text-white text-xs transition hover:opacity-75"
+                     
                     >
                       Transactions will be completed in Euros and a currency
                       reference is available on hover.
@@ -106,15 +108,15 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <hr className=" absolute w-[75%] bottom-[445px]" />
-              <div className="col-span-2 sm:col-span-1">
-                <p className="text-xl font-bold text-white">metta muse</p>
+              <hr className="hr3" />
+              <div className="contact-us">
+                <p className="para4">metta muse</p>
 
-                <ul className="mt-6 space-y-4 text-lg font-light">
+                <ul className="ul1">
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                    
                     >
                       {" "}
                       About Us{" "}
@@ -124,7 +126,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                    
                     >
                       {" "}
                       Stories{" "}
@@ -134,7 +136,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                     
                     >
                       {" "}
                       Artisans{" "}
@@ -144,7 +146,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                     
                     >
                       {" "}
                       Boutiques{" "}
@@ -154,7 +156,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                    
                     >
                       {" "}
                       Contact Us{" "}
@@ -163,7 +165,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                      
                     >
                       {" "}
                       EU Compliances Docs{" "}
@@ -172,14 +174,14 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div className="col-span-2 sm:col-span-1">
-                <p className="text-xl font-bold text-white">QUICK LINKS</p>
+              <div className="contact-us">
+                <p className="para4">QUICK LINKS</p>
 
-                <ul className="mt-6 space-y-4 text-lg font-light">
+                <ul className="ul1">
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                    
                     >
                       {" "}
                       Orders & Shipping{" "}
@@ -189,7 +191,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                     
                     >
                       {" "}
                       Join/Login as a Seller{" "}
@@ -199,7 +201,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                     
                     >
                       {" "}
                       Payment & Pricing{" "}
@@ -208,7 +210,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                      
                     >
                       {" "}
                       Return & Refunds{" "}
@@ -217,7 +219,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                     
                     >
                       {" "}
                       FAQs{" "}
@@ -226,7 +228,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                     
                     >
                       {" "}
                       Privacy Policy{" "}
@@ -235,7 +237,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="#"
-                      className="text-white transition hover:opacity-75"
+                     
                     >
                       {" "}
                       Terms & Conditions{" "}
@@ -244,25 +246,25 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div className="col-span-2 sm:col-span-1">
-                <p className="text-xl font-bold text-white">FOLLOW US</p>
+              <div className="contact-us">
+                <p className="para4">FOLLOW US</p>
 
-                <div className="bg-red- flex gap-3 mt-6">
-                  <div className="border p-1.5 rounded-full">
-                    <RiInstagramFill className="h-5 w-5 text-white" />
+                <div className="iconsCon">
+                  <div className="icon-wrapper">
+                    <RiInstagramFill className="icons01" />
                   </div>
-                  <div className="border p-1.5 rounded-full">
-                    <SiLinkedin className="h-5 w-5 text-white" />
+                  <div className="icon-wrapper">
+                    <SiLinkedin className="icons01" />
                   </div>
                 </div>
-                <p className="text-xl font-bold text-white mt-14">
+                <p className="custom-text2">
                   metta muse ACCEPTS
                 </p>
-                <div className="flex items-center justify-between mt-4 ">
-                  <div className=" flex items-center justify-center border rounded-md bg-white  h-8 w-14">
+                <div className="payment">
+                  <div className="payment-icon">
                     <Image src={Gpay} width={36} height={36} alt="G Pay" />
                   </div>
-                  <div className=" flex items-center justify-center border rounded-md bg-white  h-8 w-14">
+                  <div className="payment-icon">
                     <Image
                       src={mastercard}
                       width={24}
@@ -270,7 +272,7 @@ const Footer = () => {
                       alt="MasterCard"
                     />
                   </div>
-                  <div className=" flex items-center justify-center border rounded-md bg-white h-8 w-14">
+                  <div className="payment-icon">
                     <Image src={paypal} height={16} width={16} alt="Paypal" />
                   </div>
                   <div>
@@ -297,9 +299,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="pt-8">
-            <div className="">
-              <p className="text-sm text-center text-white">
+          <div className="footer2">
+            <div>
+              <p className="copyright">
                 Copyright &copy; 2023 mettamuse. All rights reserved.
               </p>
             </div>

@@ -13,6 +13,8 @@ import { Box, Text } from "@chakra-ui/react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import Link from "next/link";
 
+import "./Products.css"
+
 const Products = ({ selectedSortOption, filters, show }) => {
   const [storeData, setStoreData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -76,35 +78,35 @@ const Products = ({ selectedSortOption, filters, show }) => {
   return (
     <>
       {loading ? (
-        <div className=" mt-6 px-4 pb-4 grid max-sm:grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-8">
+        <div className="product-container">
           {[...Array(8)].map((_, index) => (
             <div
               key={index}
-              className="flex flex-col m-8 rounded shadow-md w-[17.4em] max-sm:w-80 animate-pulse h-96"
+              className="sklt"
             >
-              <div className="h-48 rounded-t bg-gray-700"></div>
-              <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 bg-gray-900">
-                <div className="w-full h-6 rounded bg-gray-700"></div>
-                <div className="w-full h-6 rounded bg-gray-700"></div>
-                <div className="w-3/4 h-6 rounded bg-gray-700"></div>
+              <div></div>
+              <div>
+                <div></div>
+                <div></div>
+                <div></div>
               </div>
             </div>
           ))}
         </div>
       ) : (
+        
         <div
           
           style={show ? { padding: "0px 55px 0px 0px " } : {}}
-          className={`mt-6 px-14 max-sm:px-1 pb-4 grid ${
-            show ? "grid-cols-3" : "sm:grid-cols-3 lg:grid-cols-4"
-          } gap-x-4 gap-y-4 max-sm:grid-cols-2`}
+        id="card2"  className={`card-cont ${show ? 'grid-cols-3' : 'grid-cols-4'}`}
         >
           {filteredData.map((ele) => (
             <Box
+
               key={ele.id}
               maxW="sm"
               overflow="hidden"
-              className="py-2 "
+              className="box"
               boxShadow={"inner"}
               bg="white"
               height={"fit-content"}
@@ -114,10 +116,10 @@ const Products = ({ selectedSortOption, filters, show }) => {
                 alt="ele.title"
                 width={150}
                 height={100}
-                className="m-auto h-[12em]"
+                className="image"
               />
 
-              <Box className="">
+              <Box>
                 <Text
                   color="black"
                   fontWeight="bold"
@@ -128,20 +130,20 @@ const Products = ({ selectedSortOption, filters, show }) => {
                 >
                   {ele.title}
                 </Text>
-                <div className="flex items-center justify-between">
+                <div className="text-con">
                   <Link
                     noOfLines={1}
-                    className=" text-gray-400 underline text-sm"
+                    className="text"
                     href="#"
                   >
                     Sign in {"or Create an account to see pricing"}
                   </Link>
 
-                  <div onClick={() => toggleLike(ele.id)} className="w-fit">
+                  <div onClick={() => toggleLike(ele.id)} className="icons-con">
                     {likedItems[ele.id] ? (
-                      <AiFillHeart className="h-7 w-7 text-[#EB4C6B]" />
+                      <AiFillHeart className="Fheart" />
                     ) : (
-                      <AiOutlineHeart className="h-7 w-7" />
+                      <AiOutlineHeart className="Lheart" />
                     )}
                   </div>
                 </div>

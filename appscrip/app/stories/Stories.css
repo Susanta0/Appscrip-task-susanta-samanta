@@ -1,0 +1,77 @@
+.stories-section {
+    background-color: white;
+    padding: 10rem 1rem 1em;
+
+  }
+  
+  .stories-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .stories-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1f2937; 
+  }
+  
+  .stories-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  
+  .stories-grid-md {
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+  
+  .blockquote {
+    background-color: #f9fafb; 
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blockquote-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .blockquote-image {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px; 
+    object-fit: cover;
+  }
+  
+  .stars {
+    display: flex;
+    gap: 0.125rem;
+    color: #10b981;
+  }
+  
+  .star-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: currentColor;
+  }
+  
+  .blockquote-author {
+    margin-top: 0.125rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #1f2937; 
+  }
+  
+  .blockquote-text {
+    margin-top: 1rem;
+    color: #4b5563; 
+  }
+  
